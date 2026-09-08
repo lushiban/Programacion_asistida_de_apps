@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'screens/ver_imagen_jpg.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -14,7 +16,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color.fromARGB(255, 4, 14, 6),
+          seedColor: const Color.fromARGB(255, 64, 121, 154),
         ),
       ),
       home: const MyHomePage(),
@@ -53,6 +55,18 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+      floatingActionButton: FloatingActionButton(
+        tooltip: 'Ver imagen del búho',
+        shape: const RoundedRectangleBorder(),
+        onPressed: () {
+          Navigator.push<void>(
+            context,
+            MaterialPageRoute<void>(builder: (context) => const VerImagenJPG()),
+          );
+        },
+        child: const Text('ver imagen', style: TextStyle(fontSize: 10)),
+      ),
       appBar: AppBar(
         title: const Text('Contador'),
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
@@ -63,16 +77,8 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Center(
             child: Column(
               children: [
-                const Text(
-                  '¿Cuántos gatos de 3 patas puedes contar?',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-                ),
-
-                const SizedBox(height: 16),
-
                 Image.asset(
-                  'assets/images/gatos.png',
+                  'assets/images/buho_mojado.jpg',
                   height: 320,
                   fit: BoxFit.contain,
                 ),

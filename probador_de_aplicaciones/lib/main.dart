@@ -114,29 +114,77 @@ class _CalculatorAppState extends State<CalculatorApp> {
   }
 
   void _showResult() {
-    if (_operator == null || _firstNumber == null || _display == 'Error') {
-      return;
-    }
+  // 1. Verificamos que exista una operación válida.
+  if (_operator == null ||
+      _firstNumber == null ||
+      _display == 'Error') {
+    return;
+  }
 
+  // 2. Intentamos convertir lo que está en pantalla a número.
+  double? secondNumber = double.tryParse(_display);
+
+  // Si no se puede convertir, mostramos Error.
+  if (secondNumber == null) {
     setState(() {
-      final secondNumber = double.parse(_display);
-      final selectedOperator = _operator!;
-      final result = _calculate(_firstNumber!, secondNumber, selectedOperator);
+      _display = 'Error';
+    });
+    return;
+  }
 
-      if (result == null) {
-        _showError();
+  double result;
+
+  // 3. Realizamos la operación.
+  switch (_operator) {
+    case '+':
+      result = _firstNumber! + secondNumber;
+      break;
+
+    case '-':
+      result = _firstNumber! - secondNumber;
+      break;
+
+    case '×':
+      result = _firstNumber! * secondNumber;
+      break;
+
+    case '÷':
+      
+      if (secondNumber == 0) {
+        setState(() {
+          _display = 'Error';
+        });
         return;
       }
 
-      _operation =
-          '${_formatNumber(_firstNumber!)} $selectedOperator ${_formatNumber(secondNumber)} =';
-      _display = _formatNumber(result);
-      _firstNumber = null;
-      _operator = null;
-      _startNewNumber = true;
-    });
+      result = _firstNumber! / secondNumber;
+      break;
+
+    default:
+      return;
   }
 
+  
+  if (result.isNaN || result.isInfinite) {
+    setState(() {
+      _display = 'Error';
+    });
+    return;
+  }
+
+
+  setState(() {
+    
+    if (result == result.toInt()) {
+      _display = result.toInt().toString();
+    } else {
+      _display = result.toString();
+    }
+
+    _firstNumber = null;
+    _operator = null;
+  });
+}
   double? _calculate(double first, double second, String selectedOperator) {
     switch (selectedOperator) {
       case '+':
