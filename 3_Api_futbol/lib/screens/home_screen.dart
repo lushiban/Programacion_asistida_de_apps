@@ -75,7 +75,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'CANCHA',
+          'ScoreBat',
           style: TextStyle(fontWeight: FontWeight.w900, letterSpacing: 2),
         ),
         actions: [
@@ -126,45 +126,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             'Partidos y momentos para volver a ver.\nVideos e información de ScoreBat.',
                           ),
                           const SizedBox(height: 22),
-                          if (_feed?.warning != null) ...[
-                            Container(
-                              padding: const EdgeInsets.all(16),
-                              decoration: BoxDecoration(
-                                color: const Color(0xFFFFEEC7),
-                                borderRadius: BorderRadius.circular(16),
-                              ),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  const Text(
-                                    'Aviso de la fuente',
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                  const SizedBox(height: 6),
-                                  if (_feed!.warning!.contains('deprecated'))
-                                    const Text(
-                                      'Este feed es histórico y dejó de actualizarse. '
-                                      'Los partidos mostrados no son un calendario actual.',
-                                    ),
-                                  ExpansionTile(
-                                    tilePadding: EdgeInsets.zero,
-                                    title: const Text('Ver aviso de ScoreBat'),
-                                    children: [
-                                      Padding(
-                                        padding: const EdgeInsets.only(
-                                          bottom: 12,
-                                        ),
-                                        child: Text(_feed!.warning!),
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ),
-                            const SizedBox(height: 18),
-                          ],
+                         
                           TextField(
                             controller: _search,
                             onChanged: (_) => setState(() {}),
