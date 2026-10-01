@@ -69,6 +69,7 @@ Como usuario, quiero recibir un mensaje claro cuando el monto o la cantidad de p
 - Una propina de 0% conserva el monto original antes de dividirlo.
 - En modo exacto, un resultado con más de dos decimales se presenta redondeado a dos decimales; cuando el tercer decimal es 5, se redondea hacia arriba.
 - En modo hacia arriba, primero se calcula la parte individual con propina y luego se eleva al entero más cercano, mostrándolo con dos decimales.
+- Cuando varias entradas son inválidas simultáneamente, se muestra un solo mensaje con prioridad monto, personas y propina, en ese orden.
 
 ## Requirements *(mandatory)*
 
@@ -84,6 +85,7 @@ Como usuario, quiero recibir un mensaje claro cuando el monto o la cantidad de p
 - **FR-008**: Si el porcentaje de propina es negativo o no numérico, la aplicación DEBE mostrar "Propina inválida" y NO DEBE mostrar un resultado.
 - **FR-009**: La aplicación DEBE funcionar completamente sin conexión, sin usar red ni base de datos.
 - **FR-010**: Cada cálculo válido DEBE reemplazar en pantalla el resultado del cálculo anterior.
+- **FR-011**: Si varias entradas son inválidas simultáneamente, la aplicación DEBE mostrar un solo mensaje con prioridad monto → personas → propina.
 
 ### Key Entities
 
@@ -95,7 +97,7 @@ Como usuario, quiero recibir un mensaje claro cuando el monto o la cantidad de p
 
 ### Measurable Outcomes
 
-- **SC-001**: El usuario puede completar un cálculo válido desde una sola pantalla en menos de 30 segundos.
+- **SC-001**: Desde que la pantalla está lista para recibir datos hasta que aparece el resultado, el usuario puede completar un cálculo válido en menos de 30 segundos.
 - **SC-002**: Los seis escenarios de aceptación producen exactamente el resultado o mensaje especificado.
 - **SC-003**: El 100% de las entradas inválidas descritas no muestran un resultado de pago.
 - **SC-004**: El 100% de los resultados válidos se muestran con exactamente dos decimales.
