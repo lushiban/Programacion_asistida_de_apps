@@ -1,50 +1,59 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+# Constitución de Divisor de Cuenta
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Responsabilidad Única (SRP)
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+Cada clase DEBE tener una sola razón de cambio. El cálculo DEBE limitarse a calcular: no
+DEBE validar entradas ni formatear resultados. La validación y el formato DEBEN residir en
+responsabilidades separadas y comprobables.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### II. Abierto/Cerrado (OCP)
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+El diseño DEBE permitir agregar una nueva regla de redondeo mediante una nueva
+implementación, sin modificar las clases de cálculo existentes.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### III. Sustitución de Liskov (LSP)
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+Toda implementación de una interfaz DEBE poder sustituir a cualquier otra implementación
+de esa misma interfaz. El código consumidor NO DEBE consultar el tipo concreto, hacer casts
+ni cambiar su comportamiento según la implementación recibida.
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+### IV. Segregación de Interfaces (ISP)
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+Las interfaces DEBEN ser pequeñas y contener únicamente los métodos que requieren sus
+consumidores. Ninguna clase DEBE depender de métodos que no utiliza.
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+### V. Inversión de Dependencias (DIP)
+
+La capa `presentation` DEBE depender de abstracciones definidas en `domain` y NUNCA de
+implementaciones concretas de `data`. Las dependencias concretas DEBEN inyectarse desde
+`main.dart`.
+
+## Arquitectura y seguridad
+
+- El código DEBE organizarse en las capas `presentation`, `domain` y `data`.
+- La dirección de dependencias DEBE ser `presentation -> domain <- data`.
+- Los archivos de `lib/domain/` DEBEN ser Dart puro y NO DEBEN importar
+  `package:flutter`.
+- `main.dart` DEBE ser el único lugar donde se instancian implementaciones concretas.
+- El repositorio NUNCA DEBE contener secretos ni claves de API.
+
+## Calidad, pruebas y explicabilidad
+
+- Toda funcionalidad crítica DEBE contar con pruebas ejecutables.
+- Cada criterio de aceptación definido en una especificación DEBE convertirse en una
+  prueba ejecutable.
+- El estudiante DEBE poder explicar cada función generada por el agente: qué hace, por qué
+  existe, qué recibe, qué devuelve y qué errores produce.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+Esta constitución prevalece sobre las decisiones de implementación que la contradigan. Toda
+enmienda DEBE documentar el cambio, actualizar la versión y verificar nuevamente el
+cumplimiento. La versión sigue SemVer: MAYOR para cambios incompatibles en las reglas, MENOR
+para principios o secciones nuevas y PARCHE para aclaraciones sin cambio semántico. Toda
+revisión de especificaciones, planes, tareas y código DEBE comprobar estas reglas antes de
+considerar el trabajo terminado.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.0.0 | **Ratified**: 2026-10-01 | **Last Amended**: 2026-10-01
