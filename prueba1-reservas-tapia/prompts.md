@@ -191,3 +191,15 @@ no puedes hacerlo en el repo que ya estaba trabajando? [https://github.com/lushi
 ## Prompt 4 — Repositorio general
 
 lo que pasa es que los tiempos y todo eso estaban desde un inicio en  [https://github.com/lushiban/Programacion_asistida_de_apps](https://github.com/lushiban/Programacion_asistida_de_apps), y eso importa bastante. No puedes trabajar en este repositorio? [https://github.com/lushiban/Programacion_asistida_de_apps](https://github.com/lushiban/Programacion_asistida_de_apps)
+
+## Prompt 5 — Qué sigue
+
+que que, que tenog que hacer ahora
+
+## Prompt 6 — Publicación
+
+manda y sube a mi repo [https://github.com/lushiban/Programacion_asistida_de_apps](https://github.com/lushiban/Programacion_asistida_de_apps)
+
+## Prompt 7 — Continuación
+
+sigue
