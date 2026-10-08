@@ -21,10 +21,23 @@ para tener dónde trabajar con mi grupo.
    reserva queda registrada a mi nombre.
 2. **Dado** que elijo como inicio las 10:00 y como fin las 09:00, **Cuando** intento reservar,
    **Entonces** la reserva se rechaza con el mensaje "La hora de fin debe ser posterior a la de inicio".
+3. **Dado** que la sala A está reservada de 09:00 a 10:00, **Cuando** intento reservarla de
+   09:30 a 10:30, **Entonces** se rechaza con el mensaje "La sala ya está reservada en ese horario.".
+4. **Dado** que la sala A está reservada de 09:00 a 11:00, **Cuando** intento reservarla de
+   09:30 a 10:30, **Entonces** se rechaza con el mensaje "La sala ya está reservada en ese horario.".
+5. **Dado** que la sala A está reservada de 09:30 a 10:30, **Cuando** intento reservarla de
+   09:00 a 11:00, **Entonces** se rechaza con el mensaje "La sala ya está reservada en ese horario.".
+6. **Dado** que la sala A está reservada de 09:00 a 10:00, **Cuando** intento reservarla de
+   09:00 a 10:00, **Entonces** se rechaza con el mensaje "La sala ya está reservada en ese horario.".
+7. **Dado** que la sala A está reservada de 09:00 a 10:00, **Cuando** intento reservarla de
+   10:00 a 11:00, **Entonces** la nueva reserva queda registrada.
+8. **Dado** que la sala A está reservada de 09:00 a 10:00, **Cuando** reservo la sala B de
+   09:00 a 10:00, **Entonces** la nueva reserva queda registrada.
 
 ### Edge Cases
 
-- ¿Qué pasa si la sala ya está ocupada en ese horario?
+- Dos reservas de la misma sala no pueden compartir tiempo. Si una termina exactamente cuando
+  empieza la otra, ambas se permiten.
 
 ## Requirements
 
@@ -38,6 +51,10 @@ para tener dónde trabajar con mi grupo.
 - **FR-004**: La reserva se guarda en la tabla `reservas` de Supabase usando el paquete
   `supabase_flutter`.
 - **FR-005**: La hora de fin debe ser posterior a la hora de inicio.
+- **FR-006**: Se rechaza una reserva que comparte tiempo con otra de la misma sala, con el mensaje
+  "La sala ya está reservada en ese horario.".
+- **FR-007**: Se permiten reservas consecutivas sin tiempo compartido y reservas simultáneas en
+  salas distintas.
 
 ### Key Entities
 
