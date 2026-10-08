@@ -13,6 +13,16 @@ class CrearReserva {
       );
     }
 
+    final reservas = await repositorio.reservasDeSala(solicitud.salaId);
+    for (final existente in reservas) {
+      if (solicitud.inicio.isBefore(existente.fin) &&
+          solicitud.fin.isAfter(existente.inicio)) {
+        return ResultadoReserva.rechazada(
+          'La sala ya está reservada en ese horario.',
+        );
+      }
+    }
+
     final reserva = await repositorio.guardar(solicitud);
     return ResultadoReserva.aceptada(reserva);
   }
