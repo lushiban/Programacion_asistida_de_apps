@@ -44,12 +44,9 @@ para tener dónde trabajar con mi grupo.
 ### Functional Requirements
 
 - **FR-001**: El estudiante elige una sala, una hora de inicio y una hora de fin.
-- **FR-002**: La pantalla `ReservaPage` usa un `DropdownButton` para las salas y `showTimePicker`
-  para las horas.
-- **FR-003**: El estado del formulario se maneja con `setState` dentro de
-  `lib/presentation/reserva_page.dart`.
-- **FR-004**: La reserva se guarda en la tabla `reservas` de Supabase usando el paquete
-  `supabase_flutter`.
+- **FR-002**: Las salas disponibles son Sala A, Sala B y Sala C.
+- **FR-003**: El estudiante recibe confirmación de la reserva o el motivo del rechazo.
+- **FR-004**: Las reservas aceptadas quedan registradas.
 - **FR-005**: La hora de fin debe ser posterior a la hora de inicio.
 - **FR-006**: Se rechaza una reserva que comparte tiempo con otra de la misma sala, con el mensaje
   "La sala ya está reservada en ese horario.".
