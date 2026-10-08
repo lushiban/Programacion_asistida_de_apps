@@ -183,3 +183,11 @@ Al terminar, dame un informe breve con:
 6. Lo que falta hacer manualmente para entregar.
 
 Comienza directamente con la ETAPA 1.
+
+## Prompt 3 — Repositorio propio
+
+no puedes hacerlo en el repo que ya estaba trabajando? [https://github.com/lushiban/prueba1-reservas-tapia](https://github.com/lushiban/prueba1-reservas-tapia)
+
+## Prompt 4 — Repositorio general
+
+lo que pasa es que los tiempos y todo eso estaban desde un inicio en  [https://github.com/lushiban/Programacion_asistida_de_apps](https://github.com/lushiban/Programacion_asistida_de_apps), y eso importa bastante. No puedes trabajar en este repositorio? [https://github.com/lushiban/Programacion_asistida_de_apps](https://github.com/lushiban/Programacion_asistida_de_apps)
