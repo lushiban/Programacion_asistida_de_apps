@@ -9,7 +9,7 @@
 | Enunciados modificados en la spec. | no registrado | 0; spec idéntica byte por byte |
 | Enunciados modificados en la Constitution. | no registrado | 8 apartados atómicos adaptados en redacción según `analisis_spec.md`; 0 principios reemplazados |
 | Líneas modificadas en el plan. | no registrado | 62 añadidas y 119 eliminadas según `git diff --no-index --numstat` entre los dos planes; el plan Flutter no se editó |
-| Casos de aceptación que pasan (0–6). | 6, según la verificación previa del laboratorio (10 pruebas totales) | 6, confirmados por `npm test` (13 pruebas totales) |
+| Casos de aceptación que pasan (0–6). | 6, según la verificación previa del laboratorio (10 pruebas totales) | 6, confirmados por `npm test` (14 pruebas totales) |
 
 ## Reglas de registro
 
@@ -27,4 +27,4 @@
 - El análisis manual en `analisis_spec.md` cuenta 70 enunciados de la spec: 70 intactos, 0 adaptados, 0 no reutilizables. Los SHA-256 de Flutter y React son iguales: `0AAD31E32AB01BB5C4A138364004297A5390F2D2532FF5FFDE1914EA8C00F6C9`.
 - La Constitution Flutter es 1.0.0; la React 2.0.0 adapta ocho apartados atómicos de redacción tecnológica según la clasificación manual, conservando SOLID y gobierno.
 - Los planes son artefactos distintos: Flutter tiene 159 líneas y React 102. El diff textual reportó 62 altas y 119 bajas; no representa líneas editadas a mano ni duración.
-- `npm test` en React aprobó 13/13 pruebas: seis casos de aceptación, LSP, tres de pantalla y tres comprobaciones complementarias. `npm run build` terminó con código 0 y generó 8 entradas de precache. La comprobación real de uso sin conexión no concluyó con éxito; no se declara FR-009/SC-005 verificado.
+- `npm test` en React aprobó 14/14 pruebas: seis casos de aceptación, LSP, tres de pantalla y cuatro comprobaciones complementarias. `npm run build` terminó con código 0 y generó 8 entradas de precache. Chrome 156 recargó la app y calculó 27.50 y 4.00 con red emulada offline y service worker activo después de una carga inicial. La primera apertura sin recursos previos no se verificó.
