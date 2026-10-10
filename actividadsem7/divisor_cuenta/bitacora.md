@@ -5,7 +5,7 @@
 | Minutos hasta la primera versión que compila. | no registrado | 12 |
 | Minutos hasta que pasan los 6 casos de aceptación. | no registrado | 31 |
 | Iteraciones con el agente. | no registrado | 0 |
-| Líneas de código escritas a mano. | no registrado | 50 líneas del archivo de casos declarado manual por el estudiante; otras ediciones pendientes de registrar |
+| Líneas de código escritas a mano. | no registrado | 50 líneas del archivo de casos escritas a mano por el estudiante; confirmó que no hubo otras ediciones manuales |
 | Enunciados modificados en la spec. | no registrado | 0; spec idéntica byte por byte |
 | Enunciados modificados en la Constitution. | no registrado | 8 apartados atómicos adaptados en redacción según `analisis_spec.md`; 0 principios reemplazados |
 | Líneas modificadas en el plan. | no registrado | 62 añadidas y 119 eliminadas según `git diff --no-index --numstat` entre los dos planes; el plan Flutter no se editó |
@@ -22,7 +22,7 @@
 
 ## Evidencia y límites
 
-- `test/casosDePrueba.js` tiene 50 líneas físicas no vacías en la versión actual. El estudiante declaró que escribió personalmente ese archivo; el número de otras ediciones manuales no está documentado y no se suma a las 50.
+- `test/casosDePrueba.js` tiene 50 líneas físicas no vacías en la versión actual. El estudiante declaró que escribió personalmente ese archivo; el estudiante confirmó que no hubo otras ediciones manuales. También confirmó 0 iteraciones según la regla de registro de esta bitácora.
 - El análisis manual en `analisis_spec.md` cuenta 70 enunciados de la spec: 70 intactos, 0 adaptados, 0 no reutilizables. Los SHA-256 de Flutter y React son iguales: `0AAD31E32AB01BB5C4A138364004297A5390F2D2532FF5FFDE1914EA8C00F6C9`.
 - La Constitution Flutter es 1.0.0; la React 2.0.0 adapta ocho apartados atómicos de redacción tecnológica según la clasificación manual, conservando SOLID y gobierno.
 - Los planes son artefactos distintos: Flutter tiene 159 líneas y React 102. El diff textual reportó 62 altas y 119 bajas; no representa líneas editadas a mano ni duración.
