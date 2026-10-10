@@ -4,7 +4,7 @@
 |---|---|---|
 | Minutos hasta la primera versión que compila. | no registrado | 12 |
 | Minutos hasta que pasan los 6 casos de aceptación. | no registrado | 31 |
-| Iteraciones con el agente. | no registrado | 0 registradas antes de T043; total final pendiente de registrar tras las aclaraciones posteriores |
+| Iteraciones con el agente. | no registrado | 0; dato final confirmado por el estudiante. El prompt inicial se cuenta aparte y no incluyó los mensajes posteriores de guía |
 | Líneas de código escritas a mano. | no registrado | 65 líneas no vacías modificadas directamente por el estudiante: 50 en `test/casosDePrueba.js` y 15 en `vite.offline.config.js` |
 | Enunciados modificados en la spec. | no registrado | 0; spec idéntica byte por byte |
 | Enunciados modificados en la Constitution. | no registrado | 8 apartados atómicos adaptados en redacción según `analisis_spec.md`; 0 principios reemplazados |
@@ -22,7 +22,7 @@
 
 ## Evidencia y límites
 
-- `test/casosDePrueba.js` tiene 50 líneas físicas no vacías; el estudiante declaró que lo escribió personalmente. Más tarde creó y guardó directamente `vite.offline.config.js`, con 15 líneas no vacías de JavaScript proporcionadas en instrucciones del agente. La línea añadida a `.gitignore` no se cuenta como código, y los cambios que `npm` hizo en `package.json` y `package-lock.json` no son escritura manual. Las 0 iteraciones confirmadas correspondían al cierre anterior; el total después de las aclaraciones de T043 está pendiente de registrar.
+- `test/casosDePrueba.js` tiene 50 líneas físicas no vacías; el estudiante declaró que lo escribió personalmente. Más tarde creó y guardó directamente `vite.offline.config.js`, con 15 líneas no vacías de JavaScript proporcionadas en instrucciones del agente. La línea añadida a `.gitignore` no se cuenta como código, y los cambios que `npm` hizo en `package.json` y `package-lock.json` no son escritura manual. El estudiante confirmó 0 iteraciones finales conforme a la regla de contar solo mensajes posteriores al prompt inicial que pidan corrección o modificación.
 - El análisis manual en `analisis_spec.md` cuenta 70 enunciados de la spec: 70 intactos, 0 adaptados, 0 no reutilizables. Los SHA-256 de Flutter y React son iguales: `0AAD31E32AB01BB5C4A138364004297A5390F2D2532FF5FFDE1914EA8C00F6C9`.
 - La Constitution Flutter es 1.0.0; la React 2.0.0 adapta ocho apartados atómicos de redacción tecnológica según la clasificación manual, conservando SOLID y gobierno.
 - Los planes son artefactos distintos: Flutter tiene 159 líneas y React 102. El diff textual reportó 62 altas y 119 bajas; no representa líneas editadas a mano ni duración.
