@@ -2,9 +2,9 @@
 
 | Métrica | Flutter (laboratorio anterior) | React (Deber 2) |
 |---|---|---|
-| Minutos hasta la primera versión que compila. | no registrado | pendiente de registrar |
-| Minutos hasta que pasan los 6 casos de aceptación. | no registrado | pendiente de registrar |
-| Iteraciones con el agente. | no registrado | pendiente de registrar |
+| Minutos hasta la primera versión que compila. | no registrado | 12 |
+| Minutos hasta que pasan los 6 casos de aceptación. | no registrado | 31 |
+| Iteraciones con el agente. | no registrado | 0 |
 | Líneas de código escritas a mano. | no registrado | 50 líneas del archivo de casos declarado manual por el estudiante; otras ediciones pendientes de registrar |
 | Enunciados modificados en la spec. | no registrado | 0; spec idéntica byte por byte |
 | Enunciados modificados en la Constitution. | no registrado | 8 apartados atómicos adaptados en redacción según `analisis_spec.md`; 0 principios reemplazados |
@@ -22,9 +22,8 @@
 
 ## Evidencia y límites
 
-- El estudiante indicó que el cronómetro se detuvo cuando los seis casos React pasaron. No proporcionó las horas o minutos exactos; ambas celdas de tiempo React quedan `pendiente de registrar`.
 - `test/casosDePrueba.js` tiene 50 líneas físicas no vacías en la versión actual. El estudiante declaró que escribió personalmente ese archivo; el número de otras ediciones manuales no está documentado y no se suma a las 50.
 - El análisis manual en `analisis_spec.md` cuenta 70 enunciados de la spec: 70 intactos, 0 adaptados, 0 no reutilizables. Los SHA-256 de Flutter y React son iguales: `0AAD31E32AB01BB5C4A138364004297A5390F2D2532FF5FFDE1914EA8C00F6C9`.
 - La Constitution Flutter es 1.0.0; la React 2.0.0 adapta ocho apartados atómicos de redacción tecnológica según la clasificación manual, conservando SOLID y gobierno.
 - Los planes son artefactos distintos: Flutter tiene 159 líneas y React 102. El diff textual reportó 62 altas y 119 bajas; no representa líneas editadas a mano ni duración.
-- `npm test` en React aprobó 14/14 pruebas: seis casos de aceptación, LSP, tres de pantalla y cuatro comprobaciones complementarias. `npm run build` terminó con código 0 y generó 8 entradas de precache. Chrome 156 recargó la app y calculó 27.50 y 4.00 con red emulada offline y service worker activo después de una carga inicial. La primera apertura sin recursos previos no se verificó.
+- `npm test` en React aprobó 14/14 pruebas: seis casos de aceptación, LSP, tres de pantalla y cuatro comprobaciones complementarias. `npm run build` terminó con código 0 y generó 8 entradas de precache. Chrome 156 recargó la app y calculó 27.50 y 4.00 con red emulada offline y service worker activo después de una carga inicial. En la prueba manual del 2026-10-10, el estudiante confirmó recarga y cálculos 27.50 y 4.00 con Offline marcado. Después de seguir los pasos indicados para limpiar datos del sitio y recargar aún offline, reportó `ERR_INTERNET_DISCONNECTED`. La primera apertura de esta entrega web sin recursos previos falló en esa comprobación; T043 sigue pendiente de definir y verificar una entrega local si se exige abrir desde cero sin red.
