@@ -17,3 +17,11 @@ No podria, porque esa clave esta restringida por las politicas RLS
  Conviene separar la sesión y la lista de perfiles porque cumplen responsabilidades distintas. `SesionProvider` controla quién inició sesión y las operaciones de registro, ingreso y salida; `PerfilesProvider` controla la carga de perfiles. Así, un cambio o error al cargar la lista no altera el estado de la sesión, y cada clase se puede probar por separado.
 
 Las implementaciones concretas se nombran solo en `main.dart` porque allí se conectan los contratos de `domain` con los repositorios de Supabase. Los providers reciben esos contratos y no necesitan saber de dónde vienen los datos. Si se cambia Supabase por otra fuente, se modifica esa conexión sin cambiar la lógica de `domain` ni las pantallas.
+
+> **6.** ¿Dónde quedó guardada la contraseña que escribiste? Revisa **Authentication →
+> Users** en Supabase y luego **Table Editor → perfiles**. ¿Qué ves en cada lugar y por qué
+> es importante que sea así?
+
+> **7.** ¿Por qué el servidor puede crear usuarios y la app no? Si quisieras que la app
+> pudiera hacerlo, ¿pondrías la clave secreta en Flutter o llamarías a este endpoint? Explica
+> qué ganas y qué pierdes con cada opción.
