@@ -48,6 +48,27 @@ void main() {
     });
   }
 
+  test('rechaza una propina superior al 100%', () {
+    final validacion = validarEntrada.ejecutar(
+      montoTexto: '100',
+      personasTexto: '4',
+      propinaTexto: '150',
+    );
+
+    expect(validacion.mensajeError, 'La propina no puede superar el 100%');
+  });
+
+  test('permite una propina del 100%', () {
+    final validacion = validarEntrada.ejecutar(
+      montoTexto: '100',
+      personasTexto: '4',
+      propinaTexto: '100',
+    );
+
+    expect(validacion.mensajeError, isNull);
+    expect(validacion.esValido, isTrue);
+  });
+
   test('CalcularDivision sustituye estrategias respetando LSP', () {
     const cuenta = Cuenta(monto: 10, personas: 3, porcentajePropina: 0);
     const estrategias = <EstrategiaRedondeo>[
