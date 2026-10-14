@@ -13,21 +13,32 @@ void main() {
   runApp(const DivisorCuentaApp());
 }
 
-class DivisorCuentaApp extends StatelessWidget {
+class DivisorCuentaApp extends StatefulWidget {
   const DivisorCuentaApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  State<DivisorCuentaApp> createState() => _DivisorCuentaAppState();
+}
+
+class _DivisorCuentaAppState extends State<DivisorCuentaApp> {
+  late final DivisorController _controller;
+
+  @override
+  void initState() {
+    super.initState();
     final estrategias = <String, EstrategiaRedondeo>{
       'Exacto': const RedondeoExacto(),
       'Hacia arriba': const RedondeoHaciaArriba(),
     };
-    final controller = DivisorController(
+    _controller = DivisorController(
       validarEntrada: const ValidarEntrada(),
       calcularDivision: const CalcularDivision(),
       estrategias: estrategias,
     );
+  }
 
+  @override
+  Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Dividir cuenta',
@@ -36,7 +47,7 @@ class DivisorCuentaApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: PantallaDivisor(
-        controller: controller,
+        controller: _controller,
         formateadorMoneda: const FormateadorMoneda(),
       ),
     );
