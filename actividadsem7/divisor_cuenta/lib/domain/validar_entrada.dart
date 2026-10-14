@@ -35,6 +35,11 @@ class ValidarEntrada {
     if (propina == null || !propina.isFinite || propina < 0) {
       return const ResultadoValidacion.invalido('Propina inválida');
     }
+    if (propina > 100) {
+      return const ResultadoValidacion.invalido(
+        'La propina no puede superar el 100%',
+      );
+    }
 
     return ResultadoValidacion.valido(
       Cuenta(monto: monto, personas: personas, porcentajePropina: propina),
